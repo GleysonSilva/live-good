@@ -1,0 +1,37 @@
+main {
+  .content-user {
+    margin: 39px 0px;
+  }
+  .content {
+    margin-top: 2em;
+    form {
+      justify-content: space-between;
+    }
+  }
+
+  .content-date-new-vs {
+    display: flex;
+    padding: 20px 0px;
+    justify-content: space-between;
+    align-items: center;
+
+    .input-date {
+      display: grid;
+    }
+
+    input {
+      height: 50px;
+      border-radius: 8px;
+      padding: 0 16px;
+      background: #fff;
+      border: 1px solid #a8a8b3;
+    }
+  }
+  .button-bk {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 20px;
+  }
+}

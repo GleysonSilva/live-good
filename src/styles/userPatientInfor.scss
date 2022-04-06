@@ -1,0 +1,22 @@
+.content-infor {
+  display: flex;
+
+  .img-patient {
+    img {
+      height: 2.2em;
+    }
+  }
+
+  .group-patient-infor {
+    span {
+      margin: 5px 5px;
+    }
+    .infor-1 {
+      color: #404040;
+      font-weight: bold;
+    }
+    .infor-2 {
+      color: #878787;
+    }
+  }
+}

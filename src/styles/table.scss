@@ -1,0 +1,59 @@
+table {
+  width: 100%;
+
+  tr {
+    margin-top: 5px;
+    border-bottom: 1px solid #d0cfcf;
+
+    td {
+      // display: flex;
+      // justify-content: center;
+      padding: 9px 0px;
+
+      .content-medicated {
+        display: flex;
+        align-items: center;
+        // justify-content: center;
+
+        > div {
+          display: flex;
+          padding: 5px;
+          color: #835afd;
+          border-radius: 5px;
+          font-weight: 600;
+          gap: 3px;
+          // background-color: #835afd;
+        }
+      }
+
+      .button-medicated {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all ease 1s;
+        gap: 3px;
+
+        padding: 2px;
+        border: 1px solid #835afd;
+        background: #835afd;
+        border-radius: 5px;
+        color: #fff;
+        span {
+          margin-left: 3px;
+        }
+
+        &:hover {
+          background: #fff;
+          color: #835afd;
+        }
+      }
+
+      .content-avatar {
+        img {
+          width: 2em;
+          border-radius: 99px;
+        }
+      }
+    }
+  }
+}

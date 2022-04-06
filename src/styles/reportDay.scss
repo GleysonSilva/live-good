@@ -1,0 +1,37 @@
+.content-rd {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  gap: 5px;
+
+  .content-report {
+    display: grid;
+    padding: 8px;
+    background: #fff;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+    border-radius: 10px;
+    width: 30%;
+
+    span {
+      font-style: italic;
+      margin-top: 13px;
+    }
+
+    span:nth-child(3) {
+      display: flex;
+      font-style: initial;
+      align-items: center;
+      justify-content: right;
+      font-weight: 550;
+      color: #926efd;
+    }
+
+    .content-avatar {
+      img {
+        width: 2em;
+        border-radius: 99px;
+      }
+    }
+  }
+}

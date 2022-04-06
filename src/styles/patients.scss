@@ -1,0 +1,31 @@
+.patient-infor {
+  display: flex;
+  gap: 10px;
+  margin: 8px 0px;
+  border-bottom: 1px solid #e2e2e2;
+  justify-content: space-between;
+
+  .content-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: transparent;
+    cursor: pointer;
+    background: #f8f8f8;
+
+    i {
+      color: #f8f8f8;
+      background: #835afd;
+      padding: 5px 13px 4px 14px;
+      border-radius: 9999px;
+      transition: all 0.2s ease-in-out 0.2s;
+
+      &:hover {
+        color: #835afd;
+        background: #f8f8f8;
+        padding: 5px 13px 4px 14px;
+        border-radius: 9999px;
+      }
+    }
+  }
+}

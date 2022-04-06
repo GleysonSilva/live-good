@@ -1,0 +1,23 @@
+.content-input {
+  margin-top: 10px;
+  margin-left: 9px;
+
+  input {
+    border: 1px solid #dbdbdb;
+    border-radius: 8px;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+
+    &.colorBorder {
+      border: 1px solid #dbdbdb;
+    }
+  }
+  label {
+    display: block;
+    color: #494949;
+    font-size: 1.3em;
+  }
+}
