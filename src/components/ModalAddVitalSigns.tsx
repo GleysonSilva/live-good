@@ -70,7 +70,6 @@ export const ModalAddVitalSigns: React.FC<ModalProps> = ({
   //
   async function handleSaveVitalSigns(event: FormEvent) {
     event.preventDefault();
-
     const ResidentRef = database.ref("vital-signs-resident");
 
     const firebase = await ResidentRef.push({
