@@ -67,7 +67,7 @@ export const ModalAddVitalSigns: React.FC<ModalProps> = ({
   const handleChangeVitalSigns = (title: string, value: {}) => {
     setVitalSigns({ ...vitalSigns, [title]: value });
   };
-
+  //
   async function handleSaveVitalSigns(event: FormEvent) {
     event.preventDefault();
 
