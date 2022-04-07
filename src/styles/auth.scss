@@ -108,6 +108,12 @@
 
       a {
         color: #e559f9;
+        cursor: pointer;
+        transition: all ease-in 1s;
+
+        &:hover {
+          text-decoration: underline;
+        }
       }
     }
   }

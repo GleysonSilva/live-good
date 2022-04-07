@@ -92,14 +92,7 @@ export function NewRoom() {
 
   return (
     <div id="page-auth">
-      <aside>
-        {/* <img
-          src={illustrationImg}
-          alt="Ilustração simbolizando perguntas e respostas"
-        /> 
-        <strong>LIVE GOOD</strong>
-        <p>Tire as dúvidas da sua audiência em tempo-real</p> */}
-      </aside>
+      <aside></aside>
       <main>
         <div className="main-content">
           <img src={logoImg} alt="Letmeask" />

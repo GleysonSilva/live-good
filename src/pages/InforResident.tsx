@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import logoImg from "../assets/images/logo1.png";
-import { RoomCode } from "../components/RoomCode";
 import { database } from "../services/firebase";
+import { useAuth } from "../hooks/useAuth";
 
 //compoments
 import { UserResidentInfor } from "../components/UserResidentInfor";
@@ -106,6 +106,7 @@ type MedicineReportDay = Record<
 
 export function InforResident() {
   const history = useHistory();
+  const { user } = useAuth();
 
   const params = useParams<RoomParams>();
   const residentId = params.id;
@@ -269,7 +270,9 @@ export function InforResident() {
     });
   }
 
-  // history.push(`./${localStorage.getItem("local")}`)
+  // -Mz_yK3aR56LT-sPoxG_
+  // -MzqqFaHZI-jXplhAyRG
+
   return (
     <div id="page-room">
       <header>
@@ -324,13 +327,15 @@ export function InforResident() {
                   }
                 />
               </div>
-              <Button
-                type="submit"
-                isOutLined
-                onClick={() => setModalAddVS(!modalAddVS)}
-              >
-                Adicionar Sinais Vitais
-              </Button>
+              {user && (
+                <Button
+                  type="submit"
+                  isOutLined
+                  onClick={() => setModalAddVS(!modalAddVS)}
+                >
+                  Adicionar Sinais Vitais
+                </Button>
+              )}
             </div>
             <Table list={listVitalSigns} />
           </div>
@@ -353,13 +358,15 @@ export function InforResident() {
                   }
                 />
               </div>
-              <Button
-                type="submit"
-                isOutLined
-                onClick={() => setModalAddRD(!modalAddRD)}
-              >
-                Adicionar Relatorio Diario
-              </Button>
+              {user && (
+                <Button
+                  type="submit"
+                  isOutLined
+                  onClick={() => setModalAddRD(!modalAddRD)}
+                >
+                  Adicionar Relatorio Diario
+                </Button>
+              )}
             </div>
             <ReportDay list={listReportDay} />
           </div>
@@ -381,13 +388,15 @@ export function InforResident() {
                   }
                 />
               </div>
-              <Button
-                type="submit"
-                isOutLined
-                onClick={() => setModalAddMd(!modalAddVS)}
-              >
-                Adicionar Medicamento
-              </Button>
+              {user && (
+                <Button
+                  type="submit"
+                  isOutLined
+                  onClick={() => setModalAddMd(!modalAddVS)}
+                >
+                  Adicionar Medicamento
+                </Button>
+              )}
             </div>
             <TableMedicine
               list={listMedicine}
@@ -400,13 +409,17 @@ export function InforResident() {
         </div>
 
         <div className="button-bk">
-          <Button
-            type="submit"
-            isOutLined
-            onClick={() => history.push(`../${localStorage.getItem("local")}`)}
-          >
-            Voltar{" "}
-          </Button>
+          {user && (
+            <Button
+              type="submit"
+              isOutLined
+              onClick={() =>
+                history.push(`../${localStorage.getItem("local")}`)
+              }
+            >
+              Voltar{" "}
+            </Button>
+          )}
         </div>
       </main>
 

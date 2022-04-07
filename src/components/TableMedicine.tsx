@@ -60,22 +60,26 @@ export const TableMedicine: React.FC<ITableProps> = ({ list, onGetList }) => {
                 <td align="left">{moment(row.data).format("DD/MM/YYYY")} </td>
                 <td align="left">{moment(row.data).format("H:mm")}</td>
                 <td align="left">
-                  {!row.medicated ? (
-                    <button
-                      className="button-medicated"
-                      onClick={() => handleSetMedicated(row.id)}
-                    >
-                      <FontAwesomeIcon icon={faCircleCheck} />{" "}
-                      <span>Remedio Medicado</span>
-                    </button>
-                  ) : (
-                    <div className="content-medicated">
-                      <span>Medicado as</span>
-                      <div className="hours">
-                        <span>{moment(row.medicated).format("H:mm:ss")}</span>
-                        <FontAwesomeIcon icon={faClock} />
+                  {user ? (
+                    !row.medicated ? (
+                      <button
+                        className="button-medicated"
+                        onClick={() => handleSetMedicated(row.id)}
+                      >
+                        <FontAwesomeIcon icon={faCircleCheck} />{" "}
+                        <span>Remedio Medicado</span>
+                      </button>
+                    ) : (
+                      <div className="content-medicated">
+                        <span>Medicado as</span>
+                        <div className="hours">
+                          <span>{moment(row.medicated).format("H:mm:ss")}</span>
+                          <FontAwesomeIcon icon={faClock} />
+                        </div>
                       </div>
-                    </div>
+                    )
+                  ) : (
+                    "-"
                   )}
                 </td>
                 <td>

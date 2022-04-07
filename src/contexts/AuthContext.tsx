@@ -43,7 +43,6 @@ export function AuthContextProvider(props: AuthContextProviderProps) {
 
     const result = await auth.signInWithPopup(provider);
 
-    console.log(" result", result);
     if (result.user) {
       const { displayName, photoURL, uid } = result.user;
 

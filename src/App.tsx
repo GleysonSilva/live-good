@@ -7,6 +7,7 @@ import { AdminRoom } from "./pages/AdminRoom";
 import { DashBoard } from "./pages/DashBoard";
 import { RegisterResident } from "./pages/RegisterResident";
 import { InforResident } from "./pages/InforResident";
+import { ReaderQRC } from "./pages/ReaderQRC";
 
 import { AuthContextProvider } from "./contexts/AuthContext";
 
@@ -21,6 +22,7 @@ function App() {
           <Route path="/local/register-resident" component={RegisterResident} />
           <Route path="/local/resident-infor/:id" component={InforResident} />
           <Route path="/local/:id" component={DashBoard} />
+          <Route path="/reader-qrc" component={ReaderQRC} />
 
           <Route path="/admin/rooms/:id" component={AdminRoom} />
         </Switch>

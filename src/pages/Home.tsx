@@ -1,5 +1,5 @@
 import { FormEvent, useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 import illustrationImg from "../assets/images/illustration.svg";
 import logoImg from "../assets/images/logo1.png";
 import googleIconImg from "../assets/images/google-icon.svg";
@@ -14,6 +14,8 @@ import { database } from "../services/firebase";
 export function Home() {
   const history = useHistory();
   const { user, signInWithGoogle } = useAuth();
+  const [view, setView] = useState<boolean>(false);
+  const [iDResi, setIDResi] = useState<string>("");
 
   const [roomCode, setroomCode] = useState("");
 
@@ -24,21 +26,21 @@ export function Home() {
     history.push("/local/new");
   }
 
-  async function handleJoinRoom(event: FormEvent) {
+  async function handleGetResident(event: FormEvent) {
     event.preventDefault();
 
-    if (roomCode.trim() === "") {
+    if (iDResi.trim() === "") {
       return;
     }
 
-    const roomRef = await database.ref(`local/${roomCode}`).get();
+    const idResiRef = await database.ref(`residents/${iDResi}`).get();
 
-    if (!roomRef.exists()) {
-      alert("Room does not exists");
+    if (!idResiRef.exists()) {
+      alert("Não Existe Residente com Este ID Cadastrado");
       return;
     }
 
-    history.push(`local/${roomCode}`);
+    history.push(`local/resident-infor/${iDResi}`);
   }
 
   return (
@@ -54,22 +56,38 @@ export function Home() {
       <main>
         <div className="main-content">
           <img src={logoImg} alt="Letmeask" />
-          <div className="separator">Login</div>
+          {!view ? (
+            <>
+              <div className="separator">Login Sistema</div>
 
-          <button onClick={handleCreateRoom} className="create-room">
-            <img src={googleIconImg} alt="Logo do Google" />
-            Entrar com o Google
-          </button>
-          {/* 
-          <form onSubmit={handleJoinRoom}>
-            <input
-              type="text"
-              placeholder="Digite o código da sala"
-              onChange={(event) => setroomCode(event.target.value)}
-              value={roomCode}
-            />
-            <Button type="submit">Entrar na sala</Button>
-          </form> */}
+              <button onClick={handleCreateRoom} className="create-room">
+                <img src={googleIconImg} alt="Logo do Google" />
+                Entrar com o Google
+              </button>
+
+              <p>
+                Ir Para Companhamento de Residente{" "}
+                <a onClick={() => setView(!view)}>Click Aqui</a>
+              </p>
+            </>
+          ) : (
+            <>
+              <div className="separator">Companhar Residente</div>
+
+              <form onSubmit={handleGetResident}>
+                <input
+                  type="text"
+                  placeholder="Digite o código do Residente"
+                  onChange={(event) => setIDResi(event.target.value)}
+                  value={iDResi}
+                />
+                <Button type="submit">Entrar</Button>
+              </form>
+              <p>
+                Ir Para Login <a onClick={() => setView(!view)}>Click Aqui</a>{" "}
+              </p>
+            </>
+          )}
         </div>
       </main>
     </div>
