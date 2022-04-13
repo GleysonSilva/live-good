@@ -1,26 +1,27 @@
+import React from "react";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleCheck, faClock } from "@fortawesome/free-solid-svg-icons";
 
 import moment from "moment";
 
 import "../styles/table.scss";
-import React, { ThHTMLAttributes } from "react";
 import { database } from "../services/firebase";
 import { useAuth } from "../hooks/useAuth";
 
 type MedicineArray = {
-  name: string;
   cod: string;
   data: string;
+  id: string;
+  medicated: any;
+  name: string;
+  userRespon?: {};
 };
 
 type ITableProps = {
-  // list: Array<MedicineArray>;
-  list: any;
+  list: MedicineArray[] | undefined;
   onGetList: () => void;
 };
-
-type table = ThHTMLAttributes<HTMLTableHeaderCellElement>;
 
 export const TableMedicine: React.FC<ITableProps> = ({ list, onGetList }) => {
   const { user } = useAuth();

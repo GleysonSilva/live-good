@@ -12,9 +12,14 @@ type VitalSigntsArray = {
   pain: string;
   time: string;
   type: string;
+  userRespon: {};
 };
 
-export function Table(list: any) {
+type ListType = {
+  list: VitalSigntsArray[] | undefined;
+};
+
+export const TableVitalSigns: React.FC<ListType> = ({ list }) => {
   // <th>Parte Do Dia </th>
   //         {/* --- */}
   //         <th>Temp. Corporal (TC)</th>
@@ -24,7 +29,7 @@ export function Table(list: any) {
 
   return (
     <>
-      {list && list.list && list.list.length > 0 ? (
+      {list && list.length > 0 ? (
         <table>
           <tr>
             <th>Parte Do Dia/Horario </th>
@@ -38,8 +43,7 @@ export function Table(list: any) {
           </tr>
 
           {list &&
-            list.list &&
-            list.list.map((row: any) => (
+            list.map((row: any) => (
               <tr>
                 <td>
                   <div className="content-medicated">
@@ -80,4 +84,4 @@ export function Table(list: any) {
       )}
     </>
   );
-}
+};

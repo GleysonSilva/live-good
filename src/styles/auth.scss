@@ -168,4 +168,13 @@
       margin-left: 16px;
     }
   }
+
+  @media (max-width: 750px) {
+    aside {
+      display: none;
+    }
+    main {
+      padding: 9px;
+    }
+  }
 }

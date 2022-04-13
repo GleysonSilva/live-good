@@ -8,7 +8,7 @@ import { useAuth } from "../hooks/useAuth";
 import { UserResidentInfor } from "../components/UserResidentInfor";
 import { Button } from "../components/Button";
 import { Title } from "../components/Title";
-import { Table } from "../components/Table";
+import { TableVitalSigns } from "../components/TableVitalSigns";
 import { TableMedicine } from "../components/TableMedicine";
 import { ReportDay } from "../components/ReportDay";
 
@@ -55,7 +55,9 @@ type VitalSigntsArray = {
   pain: string;
   time: string;
   type: string;
+  userRespon: {}
 };
+
 type ReportDayArray = {
   idResident: string;
   description: string;
@@ -64,9 +66,12 @@ type ReportDayArray = {
 };
 
 type MedicineArray = {
-  name: string;
   cod: string;
   data: string;
+  id: string;
+  medicated: any;
+  name: string;
+  userRespon?: {};
 };
 
 type FirebaseVitalSignsArray = Record<
@@ -234,6 +239,11 @@ export function InforResident() {
           }
         );
 
+        console.log(
+          "arrayVitalSigns",
+          arrayVitalSigns.filter((row) => row.date === datelistVS)
+        );
+
         setListVitalSigns(
           arrayVitalSigns.filter((row) => row.date === datelistVS)
         );
@@ -337,7 +347,7 @@ export function InforResident() {
                 </Button>
               )}
             </div>
-            <Table list={listVitalSigns} />
+            <TableVitalSigns list={listVitalSigns} />
           </div>
 
           {/* Relatorio Diario */}
