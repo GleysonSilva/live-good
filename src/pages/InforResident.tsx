@@ -277,9 +277,6 @@ export function InforResident() {
   // -Mz_yK3aR56LT-sPoxG_
   // -MzqqFaHZI-jXplhAyRG
 
-
-  console.log(resident)
-
   return (
     <div id="page-room">
       <header>

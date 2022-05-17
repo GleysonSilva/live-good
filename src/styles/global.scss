@@ -15,3 +15,10 @@ button,
 textarea {
   font: 400 16px "Roboto", sans-serif;
 }
+
+
+h1{
+  @media only screen and (max-width: 667px) {
+    font-size: 1.9em;
+  }
+}

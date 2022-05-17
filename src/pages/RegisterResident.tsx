@@ -85,9 +85,9 @@ export function RegisterResident() {
       <header>
         <div className="content">
           <img src={logoImg} alt="" className="" />
-          <div>
+          {/* <div>
             <RoomCode code={roomId} />
-          </div>
+          </div> */}
         </div>
       </header>
 
@@ -142,6 +142,7 @@ export function RegisterResident() {
               }
             />
 
+            {/* <Title text="Quadro Médico" icon={false} /> */}
             <textarea
               placeholder="Quadro Médico"
               value={newResident.medicalPicture}
@@ -151,7 +152,10 @@ export function RegisterResident() {
             />
           </form>
 
-          <Title text="Informação Responsavel" icon={false} />
+
+
+          <Title text="Informação Responsavel/Familiar" icon={false} />
+          <span className="infor">Campos destinados a inserir informações a respeito do responsável pelo idoso Ex: (filho(a), parente etc.) Aconselhado que seja uma pessoa de fácil acesso ligado ao residente, que possa receber ligações em caso de alguma autorização, informação ou necessidade.*</span>
           <form action="">
             <Input
               type="text"
@@ -204,6 +208,15 @@ export function RegisterResident() {
           </form>
 
           <div className="content-button">
+          <Button
+              type="submit"
+              isOutLined
+              onClick={() =>
+                history.push(`./${localStorage.getItem("local")}`)
+              }
+            >
+              Voltar{" "}
+            </Button>
             <Button type="submit" onClick={saveNewResident}>
               Salvar{" "}
             </Button>

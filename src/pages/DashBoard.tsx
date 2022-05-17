@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import logoImg from "../assets/images/logo1.png";
 import { Button } from "../components/Button";
-import { RoomCode } from "../components/RoomCode";
+// import { RoomCode } from "../components/RoomCode";
 import { useAuth } from "../hooks/useAuth";
 import { Residents } from "../components/Residents";
 import { Calendar } from "../components/Calendar";
@@ -11,9 +11,10 @@ import { Title } from "../components/Title";
 import { database } from "../services/firebase";
 
 // icon
-import { faCalendarDay, faUserGroup } from "@fortawesome/free-solid-svg-icons";
+import { faCalendarDay, faUserGroup, faQrcode } from "@fortawesome/free-solid-svg-icons";
 
 import "../styles/room.scss";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 type RoomParams = {
   id: string;
@@ -153,7 +154,12 @@ export function DashBoard() {
         <div className="content">
           <img src={logoImg} alt="" className="" />
           <div>
-            <Button isOutLined>Sair</Button>
+            <Link to="/reader-qrc">
+
+              <Button>
+                <FontAwesomeIcon icon={faQrcode} /> {'  '}Qrcode
+              </Button>
+            </Link>
           </div>
         </div>
       </header>

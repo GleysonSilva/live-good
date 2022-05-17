@@ -53,6 +53,7 @@ export function NewRoom() {
         }
       );
       setListLocations(arrayLocations);
+      setLocal(arrayLocations[0].id ? arrayLocations[0].id : '')
     });
   }, []);
 
@@ -112,6 +113,7 @@ export function NewRoom() {
             <select
               name="select"
               onChange={(event) => setLocal(event.target.value)}
+              value={local}
             >
               {listLocations &&
                 listLocations.map((row) => (

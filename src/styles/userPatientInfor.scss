@@ -8,6 +8,9 @@
   }
 
   .group-patient-infor {
+    @media only screen and (max-width: 667px) {
+      font-size: 12px;
+    }
     span {
       margin: 5px 5px;
     }
