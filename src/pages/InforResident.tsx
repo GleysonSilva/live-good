@@ -238,12 +238,6 @@ export function InforResident() {
             };
           }
         );
-
-        console.log(
-          "arrayVitalSigns",
-          arrayVitalSigns.filter((row) => row.date === datelistVS)
-        );
-
         setListVitalSigns(
           arrayVitalSigns.filter((row) => row.date === datelistVS)
         );
@@ -282,6 +276,9 @@ export function InforResident() {
 
   // -Mz_yK3aR56LT-sPoxG_
   // -MzqqFaHZI-jXplhAyRG
+
+
+  console.log(resident)
 
   return (
     <div id="page-room">
@@ -457,7 +454,7 @@ export function InforResident() {
         resident={residentId}
         title={"Adicionar Relatorio Diario"}
         onClose={() => setModalAddRD(false)}
-        onMedicine={() => handleSetMedicineUser()}
+        onMedicine={() => handleSetReportDay()}
       />
     </div>
   );

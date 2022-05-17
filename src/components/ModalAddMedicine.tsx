@@ -60,7 +60,7 @@ export const ModalAddMedicine: React.FC<ModalProps> = ({
     dateInt: "",
     dateEnd: "",
     timeMed: "",
-    hrsMed: "",
+    hrsMed: "6",
   });
 
   async function handleSaveMedicine(event: FormEvent) {
@@ -86,11 +86,11 @@ export const ModalAddMedicine: React.FC<ModalProps> = ({
         data:
           index === 0
             ? moment(`${medicine.dateInt} ${medicine.timeMed}`).format(
-                "YYYY-MM-DD H:mm"
-              )
+              "YYYY-MM-DD H:mm"
+            )
             : moment(listDataHrs[index - 1].data)
-                .add(medicine.hrsMed, "hours")
-                .format("YYYY-MM-DD H:mm"),
+              .add(medicine.hrsMed, "hours")
+              .format("YYYY-MM-DD H:mm"),
       });
     }
 

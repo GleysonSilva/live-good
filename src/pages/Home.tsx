@@ -62,7 +62,7 @@ export function Home() {
 
               <button onClick={handleCreateRoom} className="create-room">
                 <img src={googleIconImg} alt="Logo do Google" />
-                Entrar com o Google (TESTE)
+                Entrar com o Google
               </button>
 
               <p>

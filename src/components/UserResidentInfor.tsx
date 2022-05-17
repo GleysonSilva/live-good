@@ -32,7 +32,7 @@ export function UserResidentInfor(props: PatientArray) {
         </div>
         <div className="infor-2">
           <span>( Sangue {props.bloodType})</span>
-          <span>( Altura {props.height} )</span>
+          <span>( Altura {props.height} m)</span>
           <span>( Peso {props.weight} kg)</span>
         </div>
       </div>
