@@ -7,7 +7,6 @@ type InputProps = InputHTMLAttributes<HTMLInputElement> & {
 };
 
 export function Input({ colorBorder, ...props }: InputProps) {
-  // className={colorBorder} console.log(props);
   return (
     <div className="content-input">
       <label>{props.label}</label>
