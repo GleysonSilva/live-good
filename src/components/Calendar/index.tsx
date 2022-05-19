@@ -27,7 +27,7 @@ export function Calendar({ listCalendar }: any) {
         <div className="content-med">
           <i className="fa fa-plus-square"></i>
           <span>
-            {dataItem.patinet && dataItem.patinet.name} - {dataItem.name}
+            {dataItem.patinet && dataItem.patinet.name} - {dataItem.name} - {moment(`${dataItem.data}`).format("h:mm")}
           </span>
         </div>
       ),
@@ -39,7 +39,7 @@ export function Calendar({ listCalendar }: any) {
       <Scheduler data={sapleCalendar} defaultDate={displayDate}>
         <DayView
           title="Two-Day-View"
-          numberOfDays={3}
+          numberOfDays={4}
           slotDuration={60}
           slotDivisions={2}
           // startTime={"07:00"}

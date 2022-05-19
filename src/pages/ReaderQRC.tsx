@@ -48,7 +48,7 @@ export const ReaderQRC: React.FC<QrReaderProps> = () => {
           }}
         />
 
-        <p>{data}</p>
+        <p>{data === "No result" && "Não encontrado..."}</p>
       </main>
     </div>
   );

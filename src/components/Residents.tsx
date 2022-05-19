@@ -2,6 +2,8 @@ import "../styles/patients.scss";
 import { useHistory } from "react-router-dom";
 import { FormEvent } from "react";
 import { UserResidentInfor } from "./UserResidentInfor";
+import { faPlay } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 type PatientArray = {
   id: string;
@@ -27,7 +29,9 @@ export function Residents(props: PatientArray) {
 
       <form onSubmit={handleSetResidentInfor}>
         <button className="content-icon">
-          <i className="fas fa-arrow-right"></i>
+          <i>
+            <FontAwesomeIcon icon={faPlay} />
+          </i>
         </button>
       </form>
     </div>

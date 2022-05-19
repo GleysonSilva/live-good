@@ -21,7 +21,7 @@ const parseAdjust = (eventDate) => {
   return date;
 };
 
-export const displayDate = new Date(Date.UTC(currentYear, 5, 24));
+export const displayDate = new Date(Date());
 export const sampleData = baseData.map((dataItem) => ({
   id: dataItem.TaskID,
   start: parseAdjust(dataItem.Start),
